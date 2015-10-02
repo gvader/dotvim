@@ -3,15 +3,16 @@ dotvim
 
 My vim config based with Vundle Plugin.  
 
-Setup:
+1. Setup vimrc:
 cd ~
 git clone http://github.com/gvader/dotvim.git ~/.vim
 ln -s ~/.vim/vimrc ~/.vimrc
 cd ~/.vim
 
-Setup Vundle:
+2. Setup Vundle:
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-Launch vim and run :PluginInstall
+3. Launch vim and run :PluginInstall
 
+4. Setup YouCompleteMe, use this manual https://github.com/Valloric/YouCompleteMe
 
