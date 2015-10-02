@@ -1,16 +1,17 @@
 dotvim
 ======
 
-My vim config with submodules. To use this vim config do:
+My vim config based with Vundle Plugin.  
 
+Setup:
 cd ~
-git clone http://github.com/username/dotvim.git ~/.vim
+git clone http://github.com/gvader/dotvim.git ~/.vim
 ln -s ~/.vim/vimrc ~/.vimrc
 cd ~/.vim
-git submodule init
-git submodule update
+
+Setup Vundle:
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+Launch vim and run :PluginInstall
 
 
-To update submodules:
-
-git submodule foreach git pull origin master
