@@ -91,6 +91,7 @@ Plugin 'vim-scripts/DoxygenToolkit.vim'
 Plugin 'honza/vim-snippets'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'majutsushi/tagbar'
+Plugin 'rdnetto/YCM-Generator'
 
 filetype plugin indent on     " required
 
@@ -180,6 +181,9 @@ else
     nnoremap pg :YcmCompleter GoToDefinitionElseDeclaration
     nnoremap pd :YcmCompleter GoToDefinition
     nnoremap pc :YcmCompleter GoToDeclaration
+    nnoremap pi :YcmCompleter GetDoc
+    nnoremap pt :YcmCompleter GetType
+    nnoremap pf :YcmCompleter FixIt
 
     " Ultisnips
     let g:UltiSnipsListSnippets="<C-S-Tab>"
