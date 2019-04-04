@@ -37,17 +37,17 @@ filetype off
 if has("win32") || has("win16")
     set rtp+=$VIM/vimfiles/bundle/Vundle.vim/
     let path='$VIM/vimfiles/bundle'
-    call vundle#rc(path)
+    call vundle#begin(path)
 else 
     set rtp+=~/.vim/bundle/Vundle.vim/
-    call vundle#rc()
+    call vundle#begin()
 endif
 " alternatively, pass a path where Vundle should install plugins
 "let path = '~/some/path/here'
 "call vundle#rc(path)
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between here and filetype plugin indent on.
@@ -93,7 +93,8 @@ Plugin 'Lokaltog/vim-powerline'
 Plugin 'majutsushi/tagbar'
 Plugin 'rdnetto/YCM-Generator'
 
-filetype plugin indent on     " required
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 
 " vim config for Cmake files
