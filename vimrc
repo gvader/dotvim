@@ -119,6 +119,7 @@ vmap    <esc>r :s/\<<c-r><c-w>\>/<c-r><c-w>/g<left><left>
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
 
+" TODO: exclude me to separate file (os specific devision)
 if has("win32") || has("win16")
     " NeoComplete
     let g:acp_enableAtStartup = 0           " Disable AutoComplPop.
@@ -203,4 +204,24 @@ let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
-nmap <F9> :Lexplore<CR>
+
+let g:NetrwIsOpened=0
+
+" This function toggles netrw sidebar
+function! ToggleNetRW()
+    if g:NetrwIsOpened
+        let i = bufnr("$")
+        while (i >= 1)
+            if (getbufvar(i, "&filetype") == "netrw")
+                silent exe "bwipeout " . i
+            endif
+            let i-=1
+        endwhile
+        let g:NetrwIsOpen=0
+    else
+        let g:NetrwIsOpen=1
+        silent Lexplore
+    endif
+endfunction
+
+nmap <silent> <F9> :call ToggleNetRW()<CR>
